@@ -228,6 +228,8 @@ void computerTurn(char player, char computer, char board[])
 		}
 	}
 
+	// If there are no "winning" solutions
+	// search for an empty position on the board at random
 	int cmpTurn = (rand() % 8) + 1;
 
 	// If element is empty, go there

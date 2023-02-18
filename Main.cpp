@@ -16,5 +16,6 @@ int main()
 		playGame();
 
 	// TODO: Implement a loop to enable play again function
+	std::cout << "FIX THIS GAME!\n\n";
 
 }
