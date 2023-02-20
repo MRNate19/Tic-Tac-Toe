@@ -4,6 +4,23 @@
 
 //================================================================================================
 
+/*bool isTie(char board[], int limit)
+{
+	if (limit == 1)
+	{
+		char tie = getWinner(board);
+		if (tie == 'd')
+		{
+			std::cout << "It's a tie!\n";
+			return true;
+		}
+	}
+
+	return false;
+}*/
+
+//================================================================================================
+
 // Contains the game logic
 // Returns prematurely on bad input
 void playGame()
@@ -42,7 +59,7 @@ void playGame()
 		int coinResult = (coinFlip % 2);  // Remainder will be 0 (Tails) or 1 (Heads)
 
 		char player, computer;
-		int limit = 9; // There can be a possible 9 turns
+		int limit = 8; // There can be a possible 9 turns
 
 		// Game loop
 		if (choice == coinResult)
@@ -58,6 +75,8 @@ void playGame()
 				gameOver = checkGameState(board);
 
 				limit--;
+				//gameOver = isTie(board, limit);
+				
 
 				if (!gameOver)
 				{
@@ -66,7 +85,11 @@ void playGame()
 				}
 
 				limit--;
+				//gameOver = isTie(board, limit);
 			}
+
+			if (!gameOver)
+				std::cout << "It's a tie!\n";
 		}
 		else
 		{
@@ -81,6 +104,7 @@ void playGame()
 				gameOver = checkGameState(board);
 
 				limit--;
+				//gameOver = isTie(board, limit);
 
 				if (!gameOver)
 				{
@@ -89,7 +113,11 @@ void playGame()
 				}
 
 				limit--;
+				//gameOver = isTie(board, limit);
 			}
+
+			if (!gameOver)
+				std::cout << "It's a tie!\n";
 		}
 	}
 }
@@ -114,18 +142,19 @@ void instructions()
 // Display the current state of the game
 void displayBoard(char board[])
 {
+	std::cout << '\n';
 	std::cout << board[0] << '|' << board[1] << '|' << board[2] << std::endl;
 	std::cout << "-----\n";
 	std::cout << board[3] << '|' << board[4] << '|' << board[5] << std::endl;
 	std::cout << "-----\n";
 	std::cout << board[6] << '|' << board[7] << '|' << board[8] << std::endl;
+	std::cout << '\n';
 }
 
 //================================================================================================
 
 // Calculate a winner
-// Returns true if the game has been won
-// Returns false if undecided
+// Returns the winner (X or O)
 char getWinner(char board[])
 {
 	// Possible winning positions on board

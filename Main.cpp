@@ -3,19 +3,20 @@
 
 int main()
 {
-
+	bool isInPlay = true;
 	instructions();
 
 	playGame();
 
-	char answer;
-	std::cout << "Would you like to play again? (y/n): ";
-	std::cin >> answer;
+	while (isInPlay)
+	{
+		char answer;
+		std::cout << "Would you like to play again? (y/n): ";
+		std::cin >> answer;
 
-	if (answer == 'y')
-		playGame();
-
-	// TODO: Implement a loop to enable play again function
-	std::cout << "FIX THIS GAME!\n\n";
-
+		if (answer == 'y')
+			playGame();
+		else
+			isInPlay = false;
+	}
 }
