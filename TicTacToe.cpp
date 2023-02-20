@@ -3,22 +3,6 @@
 #include "TicTacToe.h"
 
 //================================================================================================
-
-/*bool isTie(char board[], int limit)
-{
-	if (limit == 1)
-	{
-		char tie = getWinner(board);
-		if (tie == 'd')
-		{
-			std::cout << "It's a tie!\n";
-			return true;
-		}
-	}
-
-	return false;
-}*/
-
 //================================================================================================
 
 // Contains the game logic
@@ -75,8 +59,6 @@ void playGame()
 				gameOver = checkGameState(board);
 
 				limit--;
-				//gameOver = isTie(board, limit);
-				
 
 				if (!gameOver)
 				{
@@ -85,7 +67,6 @@ void playGame()
 				}
 
 				limit--;
-				//gameOver = isTie(board, limit);
 			}
 
 			if (!gameOver)
@@ -104,7 +85,6 @@ void playGame()
 				gameOver = checkGameState(board);
 
 				limit--;
-				//gameOver = isTie(board, limit);
 
 				if (!gameOver)
 				{
@@ -113,7 +93,6 @@ void playGame()
 				}
 
 				limit--;
-				//gameOver = isTie(board, limit);
 			}
 
 			if (!gameOver)

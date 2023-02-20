@@ -10,5 +10,4 @@ void playGame();
 char getWinner(char board[]);
 
 bool checkGameState(char board[]);
-bool isTie(char board[], int limit);
 
